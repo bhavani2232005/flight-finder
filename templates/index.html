@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flight Finder</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h1>Flight Finder</h1>
+
+<form method="POST">
+    <input type="text" name="source" placeholder="Departure City" required>
+    <input type="text" name="destination" placeholder="Destination City" required>
+    <button type="submit">Search</button>
+</form>
+
+<h2>Available Flights:</h2>
+
+{% for flight in flights %}
+<p>{{ flight.airline }} - {{ flight.flight }}</p>
+{% endfor %}
+
+</body>
+</html>
